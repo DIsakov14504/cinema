@@ -10,5 +10,3 @@ class CinemaParser:
   def print_raw_content(self):
     self.extract_raw_content()
     return (extract_raw_content(self),prettify())
-  def get_films_list():
-    
