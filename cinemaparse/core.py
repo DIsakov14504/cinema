@@ -26,6 +26,7 @@ class CinemaParser:
     films = self.content.find_all('div', {'class': 'movie-plate'})
     x = self.content.find('div', {'attr-title': film})
     a= x.find('div',{'class':'movie-next-screening'}).find('span',{'class':'label label-bg label-default normal-font'}).text
+    print (a)
     if a == ' сегодня': 
       href = x.find('div',{'class': 'text-center movie-poster-mobile'}).find('a').get('href')
       newurl = self.url + href
@@ -41,4 +42,4 @@ msk_parser = CinemaParser()
 print(msk_parser.get_films_list())
 spb_parser = CinemaParser('spb')
 print(spb_parser.get_films_list())
-print(msk_parser.get_nearest_film_session('Джокер'))
+print(msk_parser.get_nearest_film_session(''))  # введите название фильма
